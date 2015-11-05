@@ -57,4 +57,9 @@ public class main{
 			System.out.println("Erro 2: Error en lectura del fichero.");
 		}
 	}
+
+	GraphMatrixDirected  grafito = new GraphMatrixDirected(5);
+	grafito.toString();
+
+
 }
