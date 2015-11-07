@@ -1,4 +1,4 @@
-// An implementation of a priority queue in a vector.
+ // An implementation of a priority queue in a vector.
 // (c) 1998, 2001, 2002 duane a. bailey
 
 /**

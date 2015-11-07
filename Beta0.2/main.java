@@ -93,7 +93,11 @@ public class main{
 		}
 		
 
+		algoritmo Algoritmo = new algoritmo(city);
+		Object [] array = Algoritmo.shortest(origin, destiny);
 
+
+		
 
 
 		/*
