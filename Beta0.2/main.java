@@ -3,12 +3,12 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
+import java.util.Scanner;
 
 
 public class main{
 	public static void main(String[] args) {
 		Graph city = new GraphMatrixDirected(10);
-
 		try{
 			BufferedReader file = new BufferedReader(new FileReader("grafo.txt"));
 			String line;
@@ -63,23 +63,58 @@ public class main{
 		}
 
 
-	String inputcity = "Guatemala";
-	VectorHeap heap = new VectorHeap();
-	System.out.println("\n\n\nEstoy en "+city.get(inputcity)+"\n Y estos lugares estan:\n");
-	//place neighbors of lab in into priority queue
-	for(Iterator i=city.neighbors(inputcity); i.hasNext();){
-	   Object nextcity = i.next();
-	   Object distance = city.getEdge(inputcity, nextcity).label();
-	   heap.add(new ComparableAssociation((Comparable)distance,nextcity));
-	}
+		String origin, destiny;
+		System.out.println("   _____        _                 _     _   _       ");
+		System.out.println("  / ____|      | |               (_)   | | (_)      ");
+		System.out.println(" | |  __ ______| |     ___   __ _ _ ___| |_ _  ___  ");
+		System.out.println(" | | |_ |______| |    / _   / _` | / __| __| |/ __| ");
+		System.out.println(" | |__| |      | |___| (_) | (_| |  __   |_| | (__  ");
+		System.out.println("   _____|      |______ ___/  __, |_|___/ __|_| ___| ");
+		System.out.println("                             __/ |                  ");
+		System.out.println("                            |___/                   ");
+		System.out.println("Bienvenido a G-Logistic\n");
+		while(true){
+			System.out.print("\nIngrese su ciudad de origen: ");
+			Scanner input = new Scanner(System.in);
+			origin = input.nextLine();
+			if(city.contains(origin))
+				break;
+			else
+				System.out.println("Ciudad no valida.");
+		}
+		while(true){
+			System.out.print("\nIngrese su ciudad de destino: ");
+			Scanner input = new Scanner(System.in);
+			destiny = input.nextLine();
+			if(city.contains(destiny))
+				break;
+			else
+				System.out.println("Ciudad no valida.");
+		}
+		
 
-	//print out theaters in order of distance
-	while(!heap.isEmpty()){
-	   ComparableAssociation show = (ComparableAssociation)heap.remove();
-	   System.out.println(show.getValue()+" is "+show.getKey()+" miles away.");
-	}
 
 
-	}
+
+		/*
+			PRINT TEST
+		*/
+		VectorHeap heap = new VectorHeap();
+		System.out.println("\n\n\nEstoy en "+city.get(origin)+"\n Y estos lugares estan:\n");
+		//place neighbors of lab in into priority queue
+		for(Iterator i=city.neighbors(origin); i.hasNext();){
+		   Object nextcity = i.next();
+		   Object distance = city.getEdge(origin, nextcity).label();
+		   heap.add(new ComparableAssociation((Comparable)distance,nextcity));
+		}
+
+		//print out theaters in order of distance
+		while(!heap.isEmpty()){
+		   ComparableAssociation show = (ComparableAssociation)heap.remove();
+		   System.out.println(show.getValue()+" is "+show.getKey()+" miles away.");
+		}
+
+
+		}
 }
 
