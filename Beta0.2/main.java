@@ -93,11 +93,7 @@ public class main{
 		}
 		
 
-		algoritmo Algoritmo = new algoritmo(city);
-		Object [] array = Algoritmo.shortest(origin, destiny);
-
-
-		
+		System.out.println(city.toString());
 
 
 		/*
