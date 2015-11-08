@@ -1,0 +1,13 @@
+Guatemala Antigua 60
+Antigua Chimaltenango 120
+Guatemala Xela 250
+Guatemala Flores 420
+Flores Xela 180
+Guatemala Chimaltenango 100
+Guatemala Mixco 15
+Mixco Antigua 40
+Chimaltenango Guatemala 100
+Mixco Guatemala 15
+Xela Flores 180
+Xela Guatemala 250 
+Antigua Mixco 40
