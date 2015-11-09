@@ -14,9 +14,9 @@ public class Floyd<V,E>{
 					if(g.containsEdge(u, w) && g.containsEdge(w, v)){
 						Edge<V,E> leg1 = g.getEdge(u,w);
 						Edge<V,E> leg2 = g.getEdge(w,v);
-						double leg1Dist = (Double) leg1.label();
-						double leg2Dist = (Double) leg2.label();
-						double newDist = leg1Dist+leg2Dist;
+						E leg1Dist = leg1.label();
+						E leg2Dist = leg2.label();
+						E newDist = leg1Dist+leg2Dist;
 						if(g.containsEdge(u,v)){
 							Edge<V,E> across = g.getEdge(u,v);
 							double acrossDist = (Double) across.label();
