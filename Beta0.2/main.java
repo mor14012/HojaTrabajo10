@@ -61,7 +61,8 @@ public class main{
 
 		System.out.println(city.toString());
 
-		String origin, destiny;
+		String origin="", destiny="";
+		Scanner input;
 		System.out.println("   _____        _                 _     _   _       ");
 		System.out.println("  / ____|      | |               (_)   | | (_)      ");
 		System.out.println(" | |  __ ______| |     ___   __ _ _ ___| |_ _  ___  ");
@@ -72,23 +73,111 @@ public class main{
 		System.out.println("                            |___/                   ");
 		System.out.println("Bienvenido a G-Logistic\n");
 		while(true){
-			System.out.print("\nIngrese su ciudad de origen: ");
-			Scanner input = new Scanner(System.in);
-			origin = input.nextLine();
-			if(city.contains(origin))
+			input = new Scanner(System.in);
+			System.out.println("\nMenu de opciones:\n1. Calcular ruta mas corta entre dos ciudades (fuera de funcionamiento)\n2. Centro del grafo (fuera de funcionamiento)\n3. Modificar grafo\n4. Finalizar programa");
+			String opcion = input.nextLine();
+			if(opcion.equals("1")){
+				System.out.println("\nCalculo de ruta mas corta entre dos ciudades");
+				while(true){
+					System.out.print("Ingrese su ciudad de origen: ");
+					input = new Scanner(System.in);
+					origin = input.nextLine();
+					if(city.contains(origin))
+						break;
+					else
+						System.out.println("Ciudad no valida.");
+				}
+				while(true){
+					System.out.print("Ingrese su ciudad de destino: ");
+					input = new Scanner(System.in);
+					destiny = input.nextLine();
+					if(city.contains(destiny))
+						break;
+					else
+						System.out.println("Ciudad no valida.");
+				}
+				System.out.println("Ruta mas corta no disponible");
+			}
+			if(opcion.equals("2")){
+				System.out.println("El centro del grafo no se encuentra disponible");
+			}
+			if(opcion.equals("3")){
+				while(true){
+					System.out.println("	1. Interrupcion de trafico entre un par de ciudades\n	2. Se establece una conexion entre ciudad1 y ciudad2 con valor de x KM\nSeleccione una opcion:");
+					input = new Scanner(System.in);
+					opcion = input.nextLine();
+					if(opcion.equals("1")){
+						System.out.println("Interrupcion de trafico");
+						while(true){
+							System.out.print("Ingrese la ciudad de origen: ");
+							input = new Scanner(System.in);
+							origin = input.nextLine();
+							if(city.contains(origin))
+								break;
+							else
+								System.out.println("Ciudad no valida.");
+						}
+						while(true){
+							System.out.print("Ingrese la ciudad de destino: ");
+							input = new Scanner(System.in);
+							destiny = input.nextLine();
+							if(city.contains(destiny))
+								break;
+							else
+								System.out.println("Ciudad no valida.");
+						}
+						city.removeEdge(origin, destiny);
+						System.out.println("Interrupcion ingresada con exito.");
+						break;
+					}
+					if(opcion.equals("2")){
+						System.out.println("Conexion entre dos ciudades");
+						while(true){
+							System.out.print("Ingrese la ciudad de origen: ");
+							input = new Scanner(System.in);
+							origin = input.nextLine();
+							if(city.contains(origin))
+								break;
+							else
+								System.out.println("Ciudad no valida.");
+						}
+						while(true){
+							System.out.print("Ingrese la ciudad de destino: ");
+							input = new Scanner(System.in);
+							destiny = input.nextLine();
+							if(city.contains(destiny))
+								break;
+							else
+								System.out.println("Ciudad no valida.");
+						}
+						int distance;
+						while(true){
+							System.out.println("Ingrese la distancia entre las dos ciudades: ");
+							input = new Scanner(System.in);
+							try{
+								distance = input.nextInt();
+								break;
+							}
+							catch(Exception e){
+								System.out.println("Distancia no valida");
+							}
+						}
+						city.addEdge(origin,destiny,distance);
+						System.out.println("Conexion realizada exitosamente");
+						break;
+					}					
+				}
+			}
+			if(opcion.equals("4")){
+				System.out.println("Finalizando programa.\n");
 				break;
-			else
-				System.out.println("Ciudad no valida.");
+			}
 		}
-		while(true){
-			System.out.print("\nIngrese su ciudad de destino: ");
-			Scanner input = new Scanner(System.in);
-			destiny = input.nextLine();
-			if(city.contains(destiny))
-				break;
-			else
-				System.out.println("Ciudad no valida.");
-		}
+
+
+
+
+
 		
 		/*
 		Imprimir grafo
