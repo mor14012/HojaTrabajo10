@@ -45,11 +45,8 @@ public class main{
 					System.out.println("Error 3: Distancia no valida");
 					break;
 				}
-				System.out.println("\nCity 1: "+city1);
 				city.add(city1);
-				System.out.println("City 2: "+city2);
 				city.add(city2);
-				System.out.println("Distance: "+distance+"KM");
 				city.addEdge(city1,city2,km);
 				counter ++;
 			}
@@ -62,6 +59,7 @@ public class main{
 			System.out.println("Error 2: Error en lectura del fichero.");
 		}
 
+		System.out.println(city.toString());
 
 		String origin, destiny;
 		System.out.println("   _____        _                 _     _   _       ");
@@ -93,7 +91,7 @@ public class main{
 		}
 		
 
-		System.out.println(city.toString());
+		
 
 
 		/*
