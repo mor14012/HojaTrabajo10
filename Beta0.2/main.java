@@ -1,3 +1,12 @@
+/*
+Universidad del Valle de Guatemala
+Algoritmos y Estructura de Datos
+Seccion: 10
+Diego Morales. Carne: 14012
+08/11/2015
+Hoja de Trabajo 10
+*/
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
@@ -96,7 +105,11 @@ public class main{
 					else
 						System.out.println("Ciudad no valida.");
 				}
-				System.out.println("Ruta mas corta no disponible");
+				Edge path = city.getEdge(origin, destiny);
+				if(path!=null)
+					System.out.println("La distancia mas corta es de "+(int)path.label()+"Km");
+				else
+					System.out.println("No existe una ruta disponible");
 			}
 			if(opcion.equals("2")){
 				System.out.println("El centro del grafo no se encuentra disponible");
