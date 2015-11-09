@@ -90,15 +90,11 @@ public class main{
 				System.out.println("Ciudad no valida.");
 		}
 		
-
-		
-
-
 		/*
-			PRINT TEST
+		Imprimir grafo
 		*/
 		VectorHeap heap = new VectorHeap();
-		System.out.println("\n\n\nEstoy en "+city.get(origin)+"\n Y estos lugares estan:\n");
+		System.out.println("\n\n\nEstoy en "+city.get(origin));
 		//place neighbors of lab in into priority queue
 		for(Iterator i=city.neighbors(origin); i.hasNext();){
 		   Object nextcity = i.next();
@@ -109,7 +105,7 @@ public class main{
 		//print out theaters in order of distance
 		while(!heap.isEmpty()){
 		   ComparableAssociation show = (ComparableAssociation)heap.remove();
-		   System.out.println(show.getValue()+" is "+show.getKey()+" miles away.");
+		   System.out.println(show.getValue()+" a "+show.getKey()+" Km de distancia.");
 		}
 		
 		
