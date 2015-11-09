@@ -187,10 +187,6 @@ public class main{
 			}
 		}
 
-
-
-
-
 		
 		/*
 		Imprimir grafo
